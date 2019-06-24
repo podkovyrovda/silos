@@ -1,0 +1,40 @@
+.silo {
+  box-sizing: border-box;
+  max-width: 154.6px;
+  padding-left: 7.75px;
+  padding-right: 7.75px;
+
+  &:first-child {
+    margin-left: -7.75px;
+  }
+
+  &:last-child {
+    margin-right: -7.75px;
+  }
+
+  &__title {
+    font-size: 1em;
+    line-height: 1.143em;
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__separators {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.silos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1345px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}

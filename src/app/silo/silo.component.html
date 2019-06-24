@@ -1,0 +1,16 @@
+<div class="silos">
+  <div class="silo" *ngFor="let indicator of indicators">
+    <div class="silo__title">{{ indicator.title }}</div>
+    <div class="silo__status">
+      <app-status [value]="indicator.percent + '%'" [warning]="indicator.warning"></app-status>
+    </div>
+    <div class="silo__body">
+      <object type="image/svg+xml" data="assets/silo.svg"></object>
+      <app-value [value]="indicator.percent" [warning]="indicator.warning"></app-value>
+      <object type="image/svg+xml" class="silo__separators" data="assets/separators.svg"></object>
+    </div>
+    <div class="silo__status">
+      <app-status [title]="'Масса карналита'" [value]="indicator.value" [warning]="indicator.warning"></app-status>
+    </div>
+  </div>
+</div>

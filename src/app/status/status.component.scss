@@ -1,0 +1,22 @@
+.status {
+  &__title {
+    margin-top: 16px;
+  }
+
+  &__value {
+    font-size: 1.857em;
+    line-height: 1.153em;
+    padding-top: 18px;
+    padding-bottom: 21px;
+  }
+
+  &__bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__bar-wrapper {
+    position: relative;
+  }
+}

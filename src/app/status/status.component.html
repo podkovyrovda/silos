@@ -1,0 +1,11 @@
+<div class="status">
+  <div class="status__title" *ngIf="title">{{ title }}</div>
+  <div class="status__value">{{ value }}
+    <div class="status__bar-wrapper">
+      <svg class="status__bar" [ngStyle]="{'stroke': color}"
+           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 3" fill="none">
+        <path stroke-width="3" d="M44 2h68"></path>
+      </svg>
+    </div>
+  </div>
+</div>
