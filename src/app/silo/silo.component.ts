@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { SocketService } from '../socket.service';
 
 @Component({
@@ -7,11 +7,13 @@ import { SocketService } from '../socket.service';
   styleUrls: ['./silo.component.scss']
 })
 export class SiloComponent implements OnInit {
-  private indicators = [];
+  public indicators = [];
   private isInitLoad = true;
+  private isErrorServer = false;
 
   constructor(private socketService: SocketService) {
     this.socketService.update().subscribe(data => {
+      this.isErrorServer = false;
       data.forEach((indicator, i) => {
         if (this.isInitLoad) {
           this.indicators.push(indicator);
@@ -21,9 +23,10 @@ export class SiloComponent implements OnInit {
         this.indicators[i].warning = indicator.value < indicator.minValue;
       });
       this.isInitLoad = false;
+    }, () => {
+      this.isErrorServer = true;
     });
   }
-
   ngOnInit() {
     this.socketService.getData();
   }

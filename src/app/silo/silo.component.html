@@ -1,4 +1,6 @@
 <div class="silos">
+  <app-error *ngIf="isErrorServer" [message]="'Server connection error!'">
+  </app-error>
   <div class="silo" *ngFor="let indicator of indicators">
     <div class="silo__title">{{ indicator.title }}</div>
     <div class="silo__status">

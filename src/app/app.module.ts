@@ -7,13 +7,15 @@ import { SiloComponent } from './silo/silo.component';
 import { ValueComponent } from './value/value.component';
 
 import { SocketService } from './socket.service';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatusComponent,
     SiloComponent,
-    ValueComponent
+    ValueComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule

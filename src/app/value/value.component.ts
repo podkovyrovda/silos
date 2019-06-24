@@ -9,7 +9,7 @@ import * as keys from '../keys';
 export class ValueComponent implements OnChanges {
   @Input() value: number;
   @Input() warning: boolean;
-  private color: string;
+  public color: string;
 
   ngOnChanges() {
     this.value = 100 - this.value;

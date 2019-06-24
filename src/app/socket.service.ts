@@ -16,10 +16,14 @@ export class SocketService {
 
   update(): Observable<any> {
     return  this.observable = new Observable((observer) => {
-      this.socket.on('update', (data) => observer.next(data));
+      this.socket.on('update', (data) => {
+        observer.next(data);
+      });
+      this.socket.on('connect_error', () => observer.error());
     });
   }
   getData() {
     this.socket.emit('update');
   }
+
 }

@@ -10,7 +10,7 @@ export class StatusComponent implements OnChanges  {
   @Input() title: string;
   @Input() value: string;
   @Input() warning: boolean;
-  private color: string;
+  public color: string;
 
   ngOnChanges() {
     this.color =  (this.warning) ? keys.RED_COLOR : keys.GREEN_COLOR ;
