@@ -9,7 +9,7 @@ import { SocketService } from '../socket.service';
 export class SiloComponent implements OnInit {
   public indicators = [];
   private isInitLoad = true;
-  private isErrorServer = false;
+  public isErrorServer = false;
 
   constructor(private socketService: SocketService) {
     this.socketService.update().subscribe(data => {
